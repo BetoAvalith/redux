@@ -1,13 +1,14 @@
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decrement,
+  increment,
+  incrementBy,
+} from "./store/slices/counter/counterSlice";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, incrementBy } from './store/slices/counter/counterSlice'
-
-import reactLogo from './assets/react.svg'
-import './App.css'
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 function App() {
-
-  
-  const { value } = useSelector( state => state.counter );
+  const { value } = useSelector((state) => state.counter);
 
   const dispatch = useDispatch();
 
@@ -24,18 +25,30 @@ function App() {
       <h1>Vite + React</h1>
       <h2>count is {value}</h2>
       <div className="card">
-        <button onClick={() => { dispatch(increment()) }}>
+        <button
+          onClick={() => {
+            dispatch(increment());
+          }}
+        >
           Increment
-        </button>  
-        <button onClick={() => { dispatch(decrement()) }}>
+        </button>
+        <button
+          onClick={() => {
+            dispatch(decrement());
+          }}
+        >
           Decrement
-        </button>   
-        <button onClick={() => { dispatch(incrementBy(5)) }}>
+        </button>
+        <button
+          onClick={() => {
+            dispatch(incrementBy(5));
+          }}
+        >
           IncrementBy
-        </button>         
-      </div>      
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
